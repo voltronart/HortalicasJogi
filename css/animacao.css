@@ -1,0 +1,327 @@
+/* ===========================================================
+   COMPONENTE — Jogi / Seção "Sobre"
+   Tudo prefixado com .jogi-sobre para ficar isolado ao
+   restante da página (nenhum estilo global é tocado)
+=========================================================== */
+.jogi-sobre {
+  --soil-950: #120d09;
+  --soil-800: #2c1f14;
+  --soil-600: #4a3320;
+  --humus-400: #8a6a45;
+  --leaf-700: #45592f;
+  --leaf-500: #6f8c4b;
+  --leaf-300: #a9c27f;
+  --dawn-100: #f4ecd8;
+  --dawn-300: #ded0ac;
+  --carrot-500: #c96a35;
+  --carrot-300: #e2965d;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: radial-gradient(120% 140% at 20% 0%, #132209 0%, var(--soil-950) 45%, #0b0705 100%);
+  padding: clamp(72px, 10vw, 140px) clamp(20px, 5vw, 48px);
+  font-family: 'Manrope', sans-serif;
+  color: var(--dawn-100);
+  perspective: 1400px;
+}
+
+.jogi-sobre *, .jogi-sobre *::before, .jogi-sobre *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- camadas de "solo" (profundidade em estratos) ---------- */
+.jogi-sobre .sobre-atmosfera {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.jogi-sobre .estrato {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  will-change: transform;
+  transition: transform 0.2s ease-out;
+}
+
+.jogi-sobre .estrato-1 {
+  top: -20%;
+  height: 60%;
+  background:
+    radial-gradient(60% 80% at 15% 20%, rgba(111, 140, 75, 0.16), transparent 70%),
+    radial-gradient(40% 60% at 85% 10%, rgba(201, 106, 53, 0.10), transparent 70%);
+  filter: blur(40px);
+}
+
+.jogi-sobre .estrato-2 {
+  top: 30%;
+  height: 55%;
+  background: linear-gradient(180deg, transparent, rgba(74, 51, 32, 0.55) 40%, rgba(74, 51, 32, 0.55) 60%, transparent);
+  border-top: 1px solid rgba(169, 194, 127, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.jogi-sobre .estrato-3 {
+  bottom: -25%;
+  height: 60%;
+  background: linear-gradient(180deg, transparent, var(--soil-800) 55%, #0a0603 100%);
+}
+
+.jogi-sobre .estrato-3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(100deg, transparent 0 38px, rgba(138, 106, 69, 0.12) 38px 40px),
+    repeating-linear-gradient(70deg, transparent 0 54px, rgba(138, 106, 69, 0.08) 54px 56px);
+  opacity: 0.6;
+}
+
+/* poeira de luz da madrugada */
+.jogi-sobre .particulas {
+  position: absolute;
+  inset: 0;
+}
+
+.jogi-sobre .particula {
+  position: absolute;
+  bottom: -10px;
+  width: var(--s, 3px);
+  height: var(--s, 3px);
+  border-radius: 50%;
+  background: var(--dawn-300);
+  opacity: 0;
+  animation: jogi-flutuar var(--dur, 14s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes jogi-flutuar {
+  0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+  8%   { opacity: 0.55; }
+  92%  { opacity: 0.35; }
+  100% { transform: translate3d(var(--drift, 20px), -120vh, 0); opacity: 0; }
+}
+
+/* ---------- grid de conteúdo ---------- */
+.jogi-sobre .container {
+  max-width: 1120px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.jogi-sobre .sobre-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(32px, 6vw, 64px);
+  align-items: start;
+}
+
+.jogi-sobre .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.jogi-sobre .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.jogi-sobre .sobre-texto {
+  transition-delay: 0.05s;
+}
+
+.jogi-sobre .sobre-card.reveal {
+  transition-delay: 0.2s;
+}
+
+/* ---------- tipografia ---------- */
+.jogi-sobre .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--leaf-300);
+  margin-bottom: 18px;
+}
+
+.jogi-sobre .eyebrow::before {
+  content: '';
+  width: 22px;
+  height: 1px;
+  background: var(--leaf-300);
+  opacity: 0.7;
+}
+
+.jogi-sobre h2 {
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+  color: var(--dawn-100);
+  text-wrap: balance;
+}
+
+.jogi-sobre .vine-underline {
+  width: 150px;
+  height: 26px;
+  display: block;
+  margin: 4px 0 22px;
+  overflow: visible;
+}
+
+.jogi-sobre #vinePath {
+  fill: none;
+  stroke: var(--carrot-500);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.3s;
+}
+
+.jogi-sobre .reveal.is-visible #vinePath {
+  stroke-dashoffset: 0;
+}
+
+.jogi-sobre p {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--dawn-300);
+  max-width: 46ch;
+  margin: 0 0 40px;
+}
+
+/* ---------- estatísticas em "camadas" ---------- */
+.jogi-sobre .stats {
+  display: flex;
+  gap: clamp(20px, 4vw, 40px);
+  flex-wrap: wrap;
+}
+
+.jogi-sobre .stat-item {
+  position: relative;
+  padding: 4px 0 4px 16px;
+  border-left: 1px solid rgba(169, 194, 127, 0.25);
+}
+
+.jogi-sobre .stat-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 680;
+  font-size: clamp(30px, 3.4vw, 40px);
+  color: var(--carrot-300);
+  line-height: 1;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.jogi-sobre .stat-label {
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--dawn-300);
+  opacity: 0.75;
+}
+
+/* ---------- cartão flutuante (tilt 3D) ---------- */
+.jogi-sobre .sobre-card {
+  --rx: 0deg;
+  --ry: 0deg;
+  background: linear-gradient(165deg, rgba(74, 51, 32, 0.55), rgba(18, 13, 9, 0.85));
+  border: 1px solid rgba(169, 194, 127, 0.14);
+  border-radius: 18px;
+  padding: clamp(28px, 3.4vw, 40px);
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) translateZ(0);
+  box-shadow:
+    0 2px 0 rgba(169, 194, 127, 0.06) inset,
+    0 30px 60px -20px rgba(0, 0, 0, 0.65),
+    0 10px 24px -12px rgba(0, 0, 0, 0.55);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+.jogi-sobre .sobre-card:hover {
+  box-shadow:
+    0 2px 0 rgba(169, 194, 127, 0.08) inset,
+    0 44px 80px -20px rgba(0, 0, 0, 0.7),
+    0 14px 30px -10px rgba(0, 0, 0, 0.6);
+}
+
+.jogi-sobre .sobre-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.jogi-sobre .sobre-card li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--dawn-100);
+  transform: translateZ(20px);
+}
+
+.jogi-sobre .check {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(111, 140, 75, 0.18);
+  border: 1px solid rgba(169, 194, 127, 0.4);
+  color: var(--leaf-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+/* ---------- responsivo ---------- */
+@media (max-width: 860px) {
+  .jogi-sobre .sobre-grid {
+    grid-template-columns: 1fr;
+  }
+  .jogi-sobre .sobre-card {
+    transform: none !important;
+  }
+}
+
+/* ---------- acessibilidade / movimento reduzido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .jogi-sobre .estrato,
+  .jogi-sobre .sobre-card,
+  .jogi-sobre .reveal,
+  .jogi-sobre #vinePath {
+    transition: none !important;
+  }
+  .jogi-sobre .particula {
+    animation: none !important;
+    display: none;
+  }
+  .jogi-sobre .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.jogi-sobre :focus-visible {
+  outline: 2px solid var(--leaf-300);
+  outline-offset: 3px;
+}
