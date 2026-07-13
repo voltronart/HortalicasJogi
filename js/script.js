@@ -105,17 +105,17 @@ function initCloudIntro(){
 
 const cardapio = [
   { semana: "Cardápio da Semana", itens: [
-      { nome: "Acelga",   img: "./img/acelga.png" },
-      { nome: "Agrião", img: "./img/agriao.png" },
-      { nome: "Alface Crespa",         img: "./img/alface-crespa.png" },
-      { nome: "Alface Roxa",  img: "./img/alface roxa.png" },
-      { nome: "Alface Americana",       img: "./img/alface-americana.png" },
-      { nome: "Brócolis de Cabeça",          img: "./img/brocolis-cabeca.png" },
-      { nome: "Brócolis de Rama",          img: "./img/brocolis-rama.png" },
-      { nome: "Cheiro Verde",       img: "./img/cheiro.png" },
-      { nome: "Couve",       img: "./img/couve.png" },
-      { nome: "Rúcula",    img: "./img/rucula.png" },
-      { nome: "Mostarda",          img: "./img/mostarda.png" },
+      { nome: "Acelga",   img: "img/acelga.png" },
+      { nome: "Agrião", img: "img/agriao.png" },
+      { nome: "Alface Crespa",         img: "img/alface-crespa.png" },
+      { nome: "Alface Roxa",  img: "img/alface roxa.png" },
+      { nome: "Alface Americana",       img: ".mg/alface-americana.png" },
+      { nome: "Brócolis de Cabeça",          img: "img/brocolis-cabeca.png" },
+      { nome: "Brócolis de Rama",          img: "img/brocolis-rama.png" },
+      { nome: "Cheiro Verde",       img: "img/cheiro.png" },
+      { nome: "Couve",       img: "img/couve.png" },
+      { nome: "Rúcula",    img: "img/rucula.png" },
+      { nome: "Mostarda",          img: ".img/mostarda.png" },
       
   ]},
  /* { semana: "Semana 2 · 21 a 25 de julho", itens: [
