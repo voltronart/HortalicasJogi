@@ -3,246 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hortaliças Jogi — Frescor direto da roça para sua mesa</title>
-<meta name="description" content="Hortaliças Jogi: hortaliças, legumes e temperos frescos, cultivados com cuidado e entregues no mesmo dia da colheita em Planaltina-GO.">
-<meta name="keywords" content="hortaliças, verduras frescas, legumes frescos, temperos, entrega no mesmo dia, Planaltina-GO, hortifruti, agricultura sem agrotóxicos">
-<meta name="author" content="Void Studio">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://SEU-USUARIO.github.io/SEU-REPOSITORIO/">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hortaliças Jogi — Frescor direto da roça para sua mesa">
-<meta property="og:description" content="Hortaliças, legumes e temperos frescos, cultivados com cuidado e entregues no mesmo dia da colheita.">
-<meta property="og:image" content="https://SEU-USUARIO.github.io/SEU-REPOSITORIO/img/logo.png">
-<meta property="og:url" content="https://SEU-USUARIO.github.io/SEU-REPOSITORIO/">
-<meta property="og:site_name" content="Hortaliças Jogi">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hortaliças Jogi — Frescor direto da roça para sua mesa">
-<meta name="twitter:description" content="Hortaliças, legumes e temperos frescos, cultivados com cuidado e entregues no mesmo dia da colheita.">
-<meta name="twitter:image" content="https://SEU-USUARIO.github.io/SEU-REPOSITORIO/img/logo.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;0,900;1,500;1,600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+<title>Hortaliças Jogi — Cardápio da Semana</title>
 <link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/animacao.css">
 </head>
 <body>
 
-<nav id="nav">
-  <div class="logo">
-    <img src="./img/logo.png" alt="Logo da Hortaliças Jogi" width="50" height="50">
-  </div>
-  <div class="nav-links">
-    <a href="#header">Início</a>
-    <a href="#produtos">Produtos</a>
-    <a href="#jogiSobre">Quem somos</a>
-    <a href="#contato">Contato</a>
-  </div>
-  <a href="#contato" class="nav-cta">Fazer pedido</a>
-</nav>
+<!-- Símbolo reutilizável da nuvem (usado via <use> nas nuvens geradas por JS) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="cloud-shape" viewBox="0 0 200 110">
+      <ellipse cx="55"  cy="70" rx="50" ry="34"/>
+      <ellipse cx="105" cy="50" rx="46" ry="42"/>
+      <ellipse cx="150" cy="68" rx="42" ry="32"/>
+      <ellipse cx="88"  cy="82" rx="62" ry="30"/>
+    </symbol>
+  </defs>
+</svg>
 
-<!-- ================= INTRO ================= -->
-<section class="intro-wrap">
-  <div class="intro-sticky" id="introSticky">
-    <div class="intro-stage">
-      <div class="sky-layer" id="skyLayer">
-        <!-- Nuvens geradas via JS -->
-      </div>
-
-      <div id="introContent">
-        <div class="intro-logo">HORTALIÇAS <em style="color: rgb(11, 201, 11);">JOGI</em></div>
-        <div class="intro-sub">Frescor direto da roça para a sua mesa</div>
-      </div>
+<!-- ================= INTRO: NUVENS NO EIXO Z ================= -->
+<section class="cloud-intro" id="cloud-intro">
+  <div class="cloud-pin">
+    <div class="sun-glow"></div>
+    <div class="cloud-scene" id="cloud-scene"></div>
+    <div class="intro-copy" id="intro-copy">
+      <h1>Hortaliças Jogi</h1>
+      <p class="tagline">Direto da horta pra sua mesa</p>
+      <p class="scroll-hint">role para continuar ↓</p>
     </div>
-
-    <div class="intro-cue"><span>Role para conhecer</span><div class="arrow"></div></div>
   </div>
 </section>
 
-<!-- ================= HEADER ================= -->
-<header class="header-photo" id="header">
-  <div class="header-content">
-    <span class="eyebrow">Hortaliças frescas • colhidas no ponto certo</span>
-    <h1>FRESCOR DE VERDADE.<br><i>COLHIDO COM CUIDADO</i> PARA CHEGAR MELHOR À SUA MESA</h1>
-    <p>A Jogi cultiva hortaliças, legumes e temperos com atenção em cada etapa, colheita no tempo ideal e entrega rápida para você receber mais sabor, mais qualidade e muito mais frescor.</p>
-    <div class="header-info">
-      <div class="info-item"><span>Horário</span>Seg a sáb, 6h às 18h</div>
-      <div class="info-item"><span>Entrega</span>No mesmo dia do pedido</div>
-      <div class="info-item"><span>Cultivo</span>Sem agrotóxicos</div>
-    </div>
-  </div>
-  <div class="header-scroll-cue"><div class="scroll-line"></div></div>
-</header>
-
-<!-- ================= CARROSSEL ================= -->
-<div class="marquee-strip">
-  <div class="marquee-track" id="marqueeTrack">
-    <span>Acelga <i>•</i> Agrião <i>•</i> Alface <i>•</i> Alho-poró <i>•</i> Almeirão <i>•</i> Brócolis Americano <i>•</i> Brócolis Rama <i>•</i> Cebolinha <i>•</i></span>
-    <span>Chicória <i>•</i> Coentro <i>•</i> Couve Folha <i>•</i> Couve-Flor <i>•</i> Espinafre <i>•</i> Rabanete <i>•</i> Salsa <i>•</i> Salsão <i>•</i></span>
-  </div>
-</div>
-
-<!-- ================= PRODUTOS ================= -->
-<section id="produtos">
-  <div class="produto-pin">
-    <div class="produto-hero">
-
-      <div class="produto-imagem">
-        <img
-          id="produtoImagem"
-          src="./img/verduras.png"
-          alt="Verduras frescas da Hortaliças Jogi">
+<!-- ================= SECTION INFORMATIVA ================= -->
+<section class="info" id="info">
+  <div class="info-inner">
+    <h2>Quem somos</h2>
+    <p>
+      Cultivamos verduras e legumes em Planaltina-GO, com colheita
+      toda semana. Sem atravessador e sem enrolação — só terra boa,
+      cuidado de perto e uma entrega fresquinha até você.
+    </p>
+    <div class="info-badges">
+      <div class="badge">
+        <svg viewBox="0 0 24 24" class="badge-icon"><path d="M4 20c8-1 14-7 15-15-9 1-15 7-15 15z"/><path d="M6 18c4-4 8-8 12-13"/></svg>
+        <strong>100% fresco</strong>
+        <span>colhido perto da entrega</span>
       </div>
-
-      <div class="produto-conteudo">
-        <span class="produto-categoria" id="produtoCategoria">Folhosas frescas</span>
-        <h2 id="produtoTitulo">Verduras de verdade, com sabor de horta</h2>
-        <p id="produtoDescricao">
-          Colhidas diariamente para manter o frescor, a textura e o sabor que fazem diferença na sua mesa.
-        </p>
-
-        <ul class="produto-beneficios" id="produtoBeneficios">
-          <li>🌿 Mais frescor em cada folha</li>
-          <li>💚 Fonte de fibras e nutrientes</li>
-          <li>🌱 Cultivo cuidadoso e sem agrotóxicos</li>
-          <li>🚜 Colheita diária para melhor qualidade</li>
-        </ul>
-
-        <button class="produto-btn" id="btnExplorar">
-          Ver benefícios
-        </button>
+      <div class="badge">
+        <svg viewBox="0 0 24 24" class="badge-icon"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/></svg>
+        <strong>Toda semana</strong>
+        <span>cardápio sempre atualizado</span>
       </div>
-
-      <div class="produto-detalhes" id="produtoDetalhes">
-        <button class="fechar" id="fecharPainel">✕</button>
-
-        <h3>Benefícios</h3>
-        <p id="detalhesBeneficios">
-          As verduras são uma escolha prática para quem quer mais leveza, mais sabor e mais qualidade nas refeições do dia a dia.
-        </p>
-
-        <h3>Como cultivamos</h3>
-        <p id="detalhesCultivo">
-          Nosso cultivo respeita o tempo certo de cada planta, com adubação orgânica, irrigação controlada e cuidado em cada etapa.
-        </p>
-
-        <h3>Como consumir</h3>
-        <p id="detalhesConsumo">
-          Perfeitas para saladas, sucos, refogados, recheios e receitas simples que pedem frescor de verdade.
-        </p>
-
-        <a href="#contato" class="produto-whatsapp">
-          Fazer pedido
-        </a>
+      <div class="badge">
+        <svg viewBox="0 0 24 24" class="badge-icon"><path d="M12 21s7-7.2 7-12a7 7 0 10-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <strong>Planaltina-GO</strong>
+        <span>direto do nosso plantio</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= SOBRE ================= -->
-<section class="jogi-sobre" id="jogiSobre">
-  <div class="sobre-atmosfera" aria-hidden="true">
-    <div class="estrato estrato-1" data-depth="0.02"></div>
-    <div class="estrato estrato-2" data-depth="0.05"></div>
-    <div class="estrato estrato-3" data-depth="0.015"></div>
-    <div class="particulas" id="jogiParticulas"></div>
-  </div>
-
-  <div class="container sobre-grid">
-    <div class="sobre-texto reveal" id="sobreLeft">
-      <span class="eyebrow">Quem planta</span>
-
-      <h2>Uma horta de família com padrão de qualidade de quem leva a produção a sério.</h2>
-
-      <svg class="vine-underline" viewBox="0 0 140 24">
-        <path id="vinePath" d="M2,18 C25,4 40,22 60,10 C80,-2 100,20 138,8"/>
-      </svg>
-
-      <p>
-        Há mais de 10 anos a Jogi cultiva a terra em pequena escala com cuidado grande: adubo orgânico, colheita no ponto certo e zero agrotóxico.
-        Cada maço de alface e cada pé de cenoura passa pelas mesmas mãos que plantaram a semente.
-      </p>
-
-      <div class="stats">
-        <div class="stat-item">
-          <div class="stat-num" data-count="10">0</div>
-          <div class="stat-label">Anos de horta</div>
-        </div>
-
-        <div class="stat-item">
-          <div class="stat-num" data-count="16">0</div>
-          <div class="stat-label">Variedades</div>
-        </div>
-
-        <div class="stat-item">
-          <div class="stat-num" data-count="0">0</div>
-          <div class="stat-label">Agrotóxico</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="sobre-card reveal" id="sobreRight">
-      <ul>
-        <li><span class="check">✓</span>Colheita feita na madrugada, antes do sol esquentar a folha.</li>
-        <li><span class="check">✓</span>Adubação 100% orgânica, sem agrotóxico em nenhuma etapa.</li>
-        <li><span class="check">✓</span>Entrega no mesmo dia, direto para sua casa ou feira.</li>
-        <li><span class="check">✓</span>Preço justo para quem planta e para quem consome.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CTA ================= -->
-<section class="cta" id="contato">
+<!-- ================= CARDÁPIO ================= -->
+<section class="cardapio-section" id="cardapio">
   <div class="container">
-    <div class="cta-inner">
-      <span class="eyebrow">Peça o seu frescor agora</span>
-      <h2>Bora colocar horta fresca na sua mesa?</h2>
-      <div class="btn-row">
-        <a href="https://wa.me/5561996433209?text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20Hortali%C3%A7as%20Jogi." class="btn-primary">
-          Pedir pelo WhatsApp →
-        </a>
-      </div>
-    </div>
+    <header>
+      <span class="eyebrow">Hortaliças Jogi</span>
+      <h2>Cardápio da Semana</h2>
+      <p>Confira o que está fresquinho essa semana</p>
+    </header>
 
-    <div class="footer-grid">
-      <div>
-        <div class="logo" style="font-size:1.15rem;">HORTALIÇAS <em>JOGI</em></div>
-        <p style="margin-top:0.8rem;max-width:32ch;">Hortaliças, legumes e temperos cultivados com cuidado e entregues frescos no mesmo dia da colheita.</p>
-      </div>
+    <div id="lista-semanas"></div>
 
-      <div>
-        <h4>Contato</h4>
-        <a href="https://wa.me/5561996433209?text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20Hortali%C3%A7as%20Jogi.">WhatsApp</a>
-        <a href="https://www.instagram.com/hortalicas.jogi/">Instagram</a>
-        <a href="mailto:contato@hortalicasjogi.com.br">contato@hortalicasjogi.com.br</a>
-      </div>
-
-      <div>
-        <h3>Localização</h3>
-        <p>Planaltina-GO</p>
-        <a href="https://www.google.com/maps/place/Planaltina,+GO/@-15.4557951,-47.6856404,12z/data=!3m1!4b1!4m6!3m5!1s0x935a6ff8c53ef657:0x6bacb765fe50147d!8m2!3d-15.4536994!4d-47.608917!16zL20vMDl2cG4x?entry=ttu&g_ep=EgoyMDI2MDcwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
-          Ver no mapa
-        </a>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      © 2026 Hortaliças Jogi — cultivado com carinho.
-      <br><br>
-      © Criado por
-      <a href="https://www.instagram.com/studiovoid0/" target="_blank" rel="noopener">
-        Void Studio
-      </a>
+    <div class="cta">
+      <h3>Quer garantir suas hortaliças fresquinhas?</h3>
+      <p>Fale com a gente e faça seu pedido pra essa semana</p>
+      <a href="https://wa.me/5561996433209" target="_blank" class="cta-btn">Pedir pelo WhatsApp</a>
     </div>
   </div>
 </section>
+
+<footer class="site-footer">Atualizado toda semana • Planaltina-GO</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="./js/script.js"></script>
-<script src="./js/animacao.js"></script>
+<script src="./s/script.js"></script>
 </body>
 </html>
